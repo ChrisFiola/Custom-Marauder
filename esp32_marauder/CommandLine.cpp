@@ -542,9 +542,9 @@ void CommandLine::runCommand(String input) {
     if (ap_sw != -1) {
       for (int i = 0; i < access_points->size(); i++) {
         if (access_points->get(i).selected)
-          Serial.println("[" + (String)i + "] " + access_points->get(i).essid + " " + (String)access_points->get(i).channel + " (selected)");
+          Serial.println("[" + (String)i + "] " + access_points->get(i).essid + " CH: " + (String)access_points->get(i).channel + " RSSi: -" + (String)access_points->get(i).rssi + " (selected)");
         else
-          Serial.println("[" + (String)i + "] " + access_points->get(i).essid + " " + (String)access_points->get(i).channel);
+          Serial.println("[" + (String)i + "] " + access_points->get(i).essid + " CH: " + (String)access_points->get(i).channel + " RSSi: -" + (String)access_points->get(i).rssi);
       }
     }
     // List SSIDs
