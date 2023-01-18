@@ -629,6 +629,8 @@ void CommandLine::runCommand(String input) {
             AccessPoint new_ap = access_points->get(index);
             new_ap.selected = true;
             access_points->set(index, new_ap);
+            wifi_scan_obj.set_channel = new_ap.channel.toInt();
+            wifi_scan_obj.changeChannel();
           }
         }
       }
