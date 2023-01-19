@@ -4,12 +4,11 @@ CommandLine::CommandLine() {
 }
 
 void CommandLine::RunSetup() {
-  Serial.println(this->ascii_art);
-
   Serial.println(F("\n\n--------------------------------\n"));
   Serial.println(F("         ESP32 Marauder      \n"));
-  Serial.println("            " + version_number + "\n");
-  Serial.println(F("       By: justcallmekoko\n"));
+  Serial.println("            " + "Custom" + "\n");
+  Serial.println(F("       By: justcallmekoko\n" + "\n"));
+  Serial.println(F("      Modified By: Chrizis\n" + "\n"));
   Serial.println(F("--------------------------------\n\n"));
   
   Serial.print("> ");
