@@ -558,7 +558,7 @@ void CommandLine::runCommand(String input) {
     else if (cl_sw != -1) {
       char sta_mac[] = "00:00:00:00:00:00";
       for (int x = 0; x < access_points->size(); x++) {
-        Serial.println("[" + (String)x + "] " + access_points->get(x).essid + " " + (String)access_points->get(x).rssi + ":");
+        Serial.println("[" + (String)x + "] " + access_points->get(x).essid + " CH: " + (String)access_points->get(x).channel + "RSSI: " + (String)access_points->get(i).rssi + ":");
         for (int i = 0; i < access_points->get(x).stations->size(); i++) {
           wifi_scan_obj.getMAC(sta_mac, stations->get(access_points->get(x).stations->get(i)).mac, 0);
           if (stations->get(access_points->get(x).stations->get(i)).selected) {
