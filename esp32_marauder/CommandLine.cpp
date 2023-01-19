@@ -4,8 +4,8 @@ CommandLine::CommandLine() {
 }
 
 void CommandLine::RunSetup() {
-  Serial.println(F("     Custom ESP32 Marauder     \n"));
-  Serial.println(F("       By: Chrizis\n"));
+  Serial.println(F("\nCustom ESP32 Marauder"));
+  Serial.println(F("By: Chrizis"));
   
   Serial.print("> ");
 }
