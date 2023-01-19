@@ -4,16 +4,14 @@ CommandLine::CommandLine() {
 }
 
 void CommandLine::RunSetup() {
-  Serial.println(this->ascii_art);
-
   Serial.println(F("\n\n--------------------------------\n"));
-  Serial.println(F("         ESP32 Marauder      \n"));
-  Serial.println("            " + version_number + "\n");
-  Serial.println(F("       By: justcallmekoko\n"));
+  Serial.println(F("         Custom ESP32 Marauder      \n"));
+  Serial.println(F("             By: Chrizis\n"));
   Serial.println(F("--------------------------------\n\n"));
   
   Serial.print("> ");
 }
+
 
 String CommandLine::getSerialInput() {
   String input = "";
@@ -559,7 +557,7 @@ void CommandLine::runCommand(String input) {
     else if (cl_sw != -1) {
       char sta_mac[] = "00:00:00:00:00:00";
       for (int x = 0; x < access_points->size(); x++) {
-        Serial.println("[" + (String)x + "] " + access_points->get(x).essid + " CH: " + (String)access_points->get(x).channel + "RSSI: " + (String)access_points->get(i).rssi + ":");
+        Serial.println("[" + (String)x + "] " + access_points->get(x).essid + " CH: " + (String)access_points->get(x).channel + "RSSI: " + (String)access_points->get(x).rssi + ":");
         for (int i = 0; i < access_points->get(x).stations->size(); i++) {
           wifi_scan_obj.getMAC(sta_mac, stations->get(access_points->get(x).stations->get(i)).mac, 0);
           if (stations->get(access_points->get(x).stations->get(i)).selected) {
