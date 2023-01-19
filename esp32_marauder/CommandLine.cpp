@@ -329,15 +329,14 @@ void CommandLine::runCommand(String input) {
     }
     // PMKID sniff
     else if (cmd_args.get(0) == SNIFF_PMKID_CMD) {
-      // Channel is now selected from list of AP. int ch_sw = this->argSearch(&cmd_args, "-c");
+      int ch_sw = this->argSearch(&cmd_args, "-c");
       int d_sw = this->argSearch(&cmd_args, "-d"); // Deauth for pmkid
       
-      // Channel is now selected from list of AP.
-      /*if (ch_sw != -1) {
+      if (ch_sw != -1) {
         wifi_scan_obj.set_channel = cmd_args.get(ch_sw + 1).toInt();
         wifi_scan_obj.changeChannel();
         Serial.println("Set channel: " + (String)wifi_scan_obj.set_channel);
-      }*/
+      }
 
       if (d_sw == -1) {
         Serial.println("Starting PMKID sniff on channel " + (String)wifi_scan_obj.set_channel + ". Stop with " + (String)STOPSCAN_CMD);
